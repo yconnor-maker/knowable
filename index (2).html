@@ -1,0 +1,803 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="color-scheme" content="light only">
+<meta name="description" content="A mental model for what is being done to American women — and what we are going to do about it. From Yamicia Connor, MD — physician, engineer, founder of the Labora Collective.">
+<title>What Is Knowable — Labora Collective</title>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400;1,600&family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;0,9..40,600;1,9..40,300;1,9..40,400&family=EB+Garamond:ital,wght@0,400;0,500;1,400" rel="stylesheet">
+
+<meta property="og:title" content="What Is Knowable — Labora Collective">
+<meta property="og:description" content="A mental model for what is being done to American women — and what we are going to do about it.">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://knowable.laboracollective.com">
+<meta name="twitter:card" content="summary_large_image">
+
+<style>
+/* ════════════════════════════════════════════════════════════
+   WHAT IS KNOWABLE — knowable.laboracollective.com
+   Single-page microsite. Style matched to
+   Manufactured Healthcare Crisis (espresso + gold).
+   ════════════════════════════════════════════════════════════ */
+
+:root {
+  --espresso:     #362511;
+  --espresso-mid: #4A3218;
+  --body-text:    #2C1A0E;
+  --muted:        #6B5648;
+  --copper:       #D48662;
+  --copper-text:  #7A4D2E;
+  --copper-light: #E8A882;
+  --blush-light:  #F5DDD9;
+  --rose:         #E7817F;
+  --rose-light:   #FAEAEA;
+  --gold:         #9E7D0A;
+  --gold-light:   #F5EDCC;
+  --bg-warm:      #F7F3EE;
+  --bg-open:      #FBF5FF;
+  --white:        #FFFFFF;
+  --font-display: 'Cormorant Garamond', Georgia, serif;
+  --font-body:    'EB Garamond', Georgia, serif;
+  --font-ui:      'DM Sans', Arial, Helvetica, sans-serif;
+}
+
+* { margin: 0; padding: 0; box-sizing: border-box; }
+html { scroll-behavior: smooth; color-scheme: light only; }
+body {
+  font-family: var(--font-ui);
+  background: var(--bg-warm);
+  color: var(--body-text);
+  font-size: 16px;
+  line-height: 1.8;
+  -webkit-font-smoothing: antialiased;
+}
+a { color: var(--gold); text-decoration: none; }
+a:hover { color: var(--espresso); }
+
+/* ── Brand bar ── */
+.brand-bar {
+  background: var(--espresso);
+  padding: 0.85rem 2rem;
+  border-bottom: 1px solid rgba(255,255,255,0.08);
+}
+.brand-bar-inner {
+  max-width: 1100px;
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  font-family: var(--font-ui);
+  font-size: 0.72rem;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+}
+.brand-bar a { color: rgba(251,245,255,0.7); }
+.brand-bar a:hover { color: var(--gold-light); }
+.brand-bar .brand-mark { color: var(--gold); font-weight: 700; }
+
+/* ── Hero ── */
+.k-hero {
+  background: var(--espresso);
+  border-bottom: 4px solid var(--gold);
+  padding: 5rem 2rem 4rem;
+}
+.k-hero-inner { max-width: 1100px; margin: 0 auto; }
+.k-overline {
+  font-family: var(--font-ui);
+  font-size: 0.62rem;
+  font-weight: 700;
+  letter-spacing: 0.28em;
+  text-transform: uppercase;
+  color: var(--gold);
+  margin-bottom: 1rem;
+  display: block;
+}
+.k-hero h1 {
+  font-family: var(--font-display);
+  font-size: clamp(2.4rem, 5.5vw, 4.2rem);
+  font-weight: 300;
+  line-height: 1.05;
+  letter-spacing: -0.01em;
+  color: var(--bg-open);
+  max-width: 880px;
+  margin-bottom: 1.5rem;
+}
+.k-hero h1 em { font-style: italic; color: var(--gold-light); }
+.k-hero-deck {
+  font-family: var(--font-ui);
+  font-size: 1.05rem;
+  line-height: 1.7;
+  color: rgba(251,245,255,0.78);
+  max-width: 700px;
+  margin-bottom: 2.25rem;
+}
+.k-hero-meta {
+  font-family: var(--font-ui);
+  font-size: 0.7rem;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  color: rgba(251,245,255,0.45);
+  margin-bottom: 2.5rem;
+}
+.k-hero-meta .dot { margin: 0 0.5rem; opacity: 0.4; }
+
+/* Hero email capture */
+.k-capture {
+  background: rgba(251,245,255,0.05);
+  border: 1px solid rgba(251,245,255,0.15);
+  border-left: 3px solid var(--gold);
+  padding: 1.5rem 1.75rem;
+  border-radius: 4px;
+  max-width: 540px;
+}
+.k-capture-label {
+  font-family: var(--font-ui);
+  font-size: 0.62rem;
+  font-weight: 700;
+  letter-spacing: 0.24em;
+  text-transform: uppercase;
+  color: var(--gold);
+  margin-bottom: 0.5rem;
+  display: block;
+}
+.k-capture p {
+  font-family: var(--font-ui);
+  font-size: 0.92rem;
+  color: rgba(251,245,255,0.82);
+  margin-bottom: 1rem;
+  line-height: 1.55;
+}
+.k-capture form { display: flex; gap: 0.5rem; flex-wrap: wrap; }
+.k-capture input[type="email"] {
+  flex: 1 1 240px;
+  padding: 0.75rem 0.9rem;
+  border: 1px solid rgba(251,245,255,0.25);
+  background: rgba(251,245,255,0.08);
+  color: var(--bg-open);
+  font-family: var(--font-ui);
+  font-size: 0.92rem;
+  border-radius: 3px;
+}
+.k-capture input[type="email"]::placeholder { color: rgba(251,245,255,0.45); }
+.k-capture button {
+  padding: 0.75rem 1.5rem;
+  background: var(--gold);
+  color: var(--espresso);
+  border: none;
+  font-family: var(--font-ui);
+  font-size: 0.72rem;
+  font-weight: 700;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  cursor: pointer;
+  border-radius: 3px;
+  transition: filter 0.2s, transform 0.1s;
+}
+.k-capture button:hover { filter: brightness(1.1); transform: translateY(-1px); }
+
+/* ── Top stats ── */
+.top-stats {
+  background: var(--espresso-mid);
+  padding: 2.5rem 2rem;
+  border-bottom: 1px solid rgba(255,255,255,0.06);
+}
+.top-stats-inner {
+  max-width: 1100px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 2rem;
+}
+.ts-cell { text-align: center; }
+.ts-num {
+  font-family: var(--font-display);
+  font-size: 2.6rem;
+  font-weight: 300;
+  line-height: 1;
+  color: var(--gold-light);
+  margin-bottom: 0.5rem;
+}
+.ts-label {
+  font-family: var(--font-ui);
+  font-size: 0.65rem;
+  font-weight: 500;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: rgba(251,245,255,0.55);
+  line-height: 1.5;
+}
+
+/* ── Anchor nav ── */
+.anchor-nav {
+  background: var(--white);
+  border-bottom: 1px solid rgba(54,37,17,0.08);
+  padding: 1rem 1.5rem;
+  position: sticky;
+  top: 0;
+  z-index: 50;
+}
+.anchor-nav-inner {
+  max-width: 1100px;
+  margin: 0 auto;
+  display: flex;
+  gap: 1.5rem;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+}
+.anchor-nav-inner a {
+  font-family: var(--font-ui);
+  font-size: 0.7rem;
+  font-weight: 600;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--muted);
+  padding: 0.25rem 0;
+  border-bottom: 2px solid transparent;
+  transition: color .15s, border-color .15s;
+}
+.anchor-nav-inner a:hover {
+  color: var(--gold);
+  border-bottom-color: var(--gold);
+}
+.anchor-num {
+  color: var(--gold);
+  font-weight: 700;
+  margin-right: 0.3rem;
+}
+
+/* ── Body sections ── */
+.body-section {
+  max-width: 860px;
+  margin: 0 auto;
+  padding: 4rem 2rem 1rem;
+  scroll-margin-top: 5rem;
+}
+.body-section:first-of-type { padding-top: 4rem; }
+.section-overline {
+  font-family: var(--font-ui);
+  font-size: 0.58rem;
+  font-weight: 700;
+  letter-spacing: 0.3em;
+  text-transform: uppercase;
+  color: var(--gold);
+  margin-bottom: 1rem;
+  display: block;
+}
+.section-h2 {
+  font-family: var(--font-display);
+  font-size: clamp(1.7rem, 3.5vw, 2.6rem);
+  font-weight: 400;
+  line-height: 1.2;
+  color: var(--espresso);
+  margin-bottom: 1.5rem;
+}
+.section-h2 em { color: var(--gold); font-style: italic; }
+.section-h3 {
+  font-family: var(--font-display);
+  font-size: 1.5rem;
+  font-weight: 600;
+  color: var(--espresso);
+  margin: 2.25rem 0 1rem;
+  line-height: 1.25;
+}
+.body-section p {
+  font-family: var(--font-body);
+  font-size: 1.1rem;
+  line-height: 1.8;
+  color: var(--body-text);
+  margin-bottom: 1.25rem;
+}
+.body-section p strong { color: var(--espresso); font-weight: 600; }
+.body-section em { font-style: italic; }
+
+/* ── Thesis block (dark quote) ── */
+.thesis-block {
+  background: var(--espresso);
+  padding: 2.5rem 2.75rem;
+  margin: 2.5rem 0;
+  border-radius: 6px;
+  border-left: 4px solid var(--gold);
+}
+.thesis-block .label {
+  font-family: var(--font-ui);
+  font-size: 0.6rem;
+  font-weight: 700;
+  letter-spacing: 0.28em;
+  text-transform: uppercase;
+  color: var(--gold);
+  margin-bottom: 1rem;
+  display: block;
+}
+.thesis-block .quote {
+  font-family: var(--font-display);
+  font-size: 1.45rem;
+  font-weight: 300;
+  font-style: italic;
+  color: var(--bg-open);
+  line-height: 1.4;
+}
+.thesis-block .attribution {
+  margin-top: 1.5rem;
+  font-family: var(--font-ui);
+  font-size: 0.78rem;
+  color: rgba(251,245,255,0.55);
+}
+
+/* ── Five questions list ── */
+.five-questions {
+  list-style: none;
+  padding: 0;
+  margin: 2rem 0;
+  counter-reset: five;
+}
+.five-questions li {
+  counter-increment: five;
+  font-family: var(--font-display);
+  font-size: 1.5rem;
+  font-weight: 400;
+  color: var(--espresso);
+  padding: 1.1rem 0 1.1rem 4rem;
+  border-bottom: 1px solid rgba(54,37,17,0.08);
+  position: relative;
+}
+.five-questions li:last-child { border-bottom: none; }
+.five-questions li::before {
+  content: counter(five);
+  position: absolute;
+  left: 0;
+  top: 1.1rem;
+  font-family: var(--font-ui);
+  font-size: 0.85rem;
+  font-weight: 700;
+  color: var(--gold);
+  background: var(--gold-light);
+  width: 2.5rem;
+  height: 2.5rem;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* ── Sepsis inset (rose-tinted callout) ── */
+.inset-card {
+  background: var(--rose-light);
+  border-left: 4px solid var(--rose);
+  padding: 2.25rem 2.5rem;
+  margin: 3rem 0;
+  border-radius: 0 6px 6px 0;
+}
+.inset-card .label {
+  font-family: var(--font-ui);
+  font-size: 0.6rem;
+  font-weight: 700;
+  letter-spacing: 0.25em;
+  text-transform: uppercase;
+  color: var(--rose);
+  margin-bottom: 0.85rem;
+  display: block;
+}
+.inset-card h3 {
+  font-family: var(--font-display);
+  font-size: 1.7rem;
+  font-weight: 600;
+  color: var(--espresso);
+  margin-bottom: 1rem;
+  line-height: 1.25;
+}
+.inset-card p {
+  font-family: var(--font-body);
+  font-size: 1.04rem;
+  line-height: 1.75;
+  color: var(--body-text);
+  margin-bottom: 0.9rem;
+}
+.inset-card p:last-child { margin-bottom: 0; }
+
+/* ── Pullquote (King quote, etc.) ── */
+.pullquote {
+  font-family: var(--font-display);
+  font-size: 1.4rem;
+  font-weight: 300;
+  font-style: italic;
+  line-height: 1.45;
+  color: var(--gold);
+  border-left: 3px solid var(--gold);
+  padding: 0.75rem 0 0.75rem 1.5rem;
+  margin: 2rem 0;
+}
+
+/* ── Tracks section (asset-card style) ── */
+.tracks-section {
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 4rem 2rem;
+}
+.tracks-h2 {
+  font-family: var(--font-display);
+  font-size: clamp(1.8rem, 3.5vw, 2.5rem);
+  font-weight: 400;
+  color: var(--espresso);
+  margin-bottom: 0.5rem;
+}
+.tracks-h2 em { color: var(--gold); font-style: italic; }
+.tracks-deck {
+  font-family: var(--font-body);
+  font-size: 1.05rem;
+  color: var(--muted);
+  margin-bottom: 2.5rem;
+  max-width: 640px;
+}
+.track-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1.5rem;
+}
+.track-card {
+  background: var(--white);
+  border-top: 4px solid var(--gold);
+  padding: 2rem 2.25rem;
+  border-radius: 0 0 6px 6px;
+  display: flex;
+  flex-direction: column;
+  text-decoration: none;
+  color: inherit;
+  transition: transform 0.2s, box-shadow 0.2s;
+}
+.track-card.live:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 12px 28px rgba(54,37,17,0.12);
+}
+.track-card .label {
+  font-family: var(--font-ui);
+  font-size: 0.58rem;
+  font-weight: 700;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  color: var(--gold);
+  margin-bottom: 0.85rem;
+  display: block;
+}
+.track-card h3 {
+  font-family: var(--font-display);
+  font-size: 1.5rem;
+  font-weight: 600;
+  color: var(--espresso);
+  margin-bottom: 0.6rem;
+  line-height: 1.25;
+}
+.track-card p {
+  font-family: var(--font-ui);
+  font-size: 0.92rem;
+  line-height: 1.6;
+  color: var(--body-text);
+  margin-bottom: 1.25rem;
+  flex: 1;
+}
+.track-card .meta {
+  font-family: var(--font-ui);
+  font-size: 0.7rem;
+  color: var(--muted);
+  letter-spacing: 0.05em;
+}
+.track-card .arrow { color: var(--gold); font-weight: 700; }
+.track-card.soon { opacity: 0.88; }
+.track-card.soon .meta { color: var(--copper-text); font-weight: 600; letter-spacing: 0.12em; text-transform: uppercase; font-size: 0.65rem; }
+
+/* ── Final CTA ── */
+.final-cta {
+  background: var(--espresso);
+  padding: 5rem 2rem;
+}
+.final-cta-inner { max-width: 720px; margin: 0 auto; text-align: center; }
+.final-cta h2 {
+  font-family: var(--font-display);
+  font-size: clamp(1.8rem, 3.5vw, 2.4rem);
+  font-weight: 300;
+  color: var(--bg-open);
+  margin-bottom: 1.25rem;
+  line-height: 1.25;
+}
+.final-cta h2 em { color: var(--gold-light); font-style: italic; }
+.final-cta-deck {
+  font-family: var(--font-ui);
+  font-size: 0.98rem;
+  color: rgba(251,245,255,0.7);
+  line-height: 1.7;
+  margin-bottom: 2.25rem;
+  max-width: 580px;
+  margin-left: auto;
+  margin-right: auto;
+}
+.final-cta .k-capture { margin: 0 auto; text-align: left; }
+
+/* ── Footer ── */
+.k-footer {
+  background: #1a1108;
+  padding: 2.5rem 2rem;
+  text-align: center;
+}
+.k-footer p {
+  font-family: var(--font-ui);
+  font-size: 0.78rem;
+  color: rgba(251,245,255,0.5);
+  line-height: 1.7;
+  max-width: 640px;
+  margin: 0 auto;
+}
+.k-footer a { color: var(--gold-light); }
+.k-footer a:hover { color: var(--gold); }
+
+/* ── Responsive ── */
+@media (max-width: 760px) {
+  .brand-bar-inner { font-size: 0.62rem; }
+  .k-hero { padding: 3rem 1.5rem 2.5rem; }
+  .top-stats-inner { grid-template-columns: repeat(2, 1fr); gap: 1.5rem; }
+  .ts-num { font-size: 2.1rem; }
+  .anchor-nav-inner { gap: 1rem; }
+  .anchor-nav-inner a { font-size: 0.62rem; letter-spacing: 0.08em; }
+  .body-section { padding: 2.5rem 1.5rem 1rem; }
+  .body-section p { font-size: 1.04rem; }
+  .thesis-block { padding: 1.75rem; }
+  .thesis-block .quote { font-size: 1.2rem; }
+  .inset-card { padding: 1.75rem; }
+  .tracks-section { padding: 3rem 1.5rem; }
+  .track-grid { grid-template-columns: 1fr; }
+  .final-cta { padding: 3.5rem 1.5rem; }
+  .five-questions li { font-size: 1.25rem; padding-left: 3.25rem; }
+  .five-questions li::before { width: 2.1rem; height: 2.1rem; font-size: 0.78rem; }
+}
+</style>
+</head>
+<body>
+
+<!-- BRAND BAR -->
+<div class="brand-bar">
+  <div class="brand-bar-inner">
+    <span><span class="brand-mark">Labora</span> Collective</span>
+    <a href="https://laboracollective.com">laboracollective.com →</a>
+  </div>
+</div>
+
+<!-- HERO -->
+<section class="k-hero">
+  <div class="k-hero-inner">
+    <span class="k-overline">A Labora Collective Microsite · Live May 21, 2026</span>
+    <h1>What Is <em>Knowable</em></h1>
+    <p class="k-hero-deck">A mental model for what is being done to American women — and what we are going to do about it. Five questions. Three tracks. One destination — the midterms.</p>
+    <div class="k-hero-meta">Dr. Yamicia Connor · OB/GYN · Founder, The Labora Collective</div>
+    <div class="k-capture">
+      <span class="k-capture-label">Follow the work</span>
+      <p>Drop your email. One piece of work per week, between now and the midterms.</p>
+      <form action="https://api.beehiiv.com/v2/publications/laboracollective/subscriptions" method="post">
+        <input type="email" name="email" placeholder="you@somewhere.com" required>
+        <button type="submit">Subscribe</button>
+      </form>
+    </div>
+  </div>
+</section>
+
+<!-- TOP STATS -->
+<section class="top-stats">
+  <div class="top-stats-inner">
+    <div class="ts-cell">
+      <div class="ts-num">33</div>
+      <div class="ts-label">Dimensions of women's &amp; children's well-being analyzed</div>
+    </div>
+    <div class="ts-cell">
+      <div class="ts-num">50</div>
+      <div class="ts-label">States cross-referenced against federal policy</div>
+    </div>
+    <div class="ts-cell">
+      <div class="ts-num">60</div>
+      <div class="ts-label">Years of political pipeline traced — Powell to now</div>
+    </div>
+    <div class="ts-cell">
+      <div class="ts-num">1873</div>
+      <div class="ts-label">Historical baseline — Comstock Act forward</div>
+    </div>
+  </div>
+</section>
+
+<!-- ANCHOR NAV -->
+<nav class="anchor-nav" aria-label="Section nav">
+  <div class="anchor-nav-inner">
+    <a href="#q1"><span class="anchor-num">1</span>What do they want?</a>
+    <a href="#q2"><span class="anchor-num">2</span>Why do they want it?</a>
+    <a href="#q3"><span class="anchor-num">3</span>How are they doing it?</a>
+    <a href="#q4"><span class="anchor-num">4</span>Why are they wrong?</a>
+    <a href="#q5"><span class="anchor-num">5</span>How do we fight back?</a>
+  </div>
+</nav>
+
+<main>
+
+<!-- WHO I AM / MENTAL MODEL -->
+<section class="body-section" id="model">
+  <span class="section-overline">The Mental Model</span>
+  <h2 class="section-h2">Simplify. <em>Simplify.</em> Simplify.</h2>
+  <p>I'm Yamicia Connor. I'm a physician — I deliver babies. I'm also a trained engineer. I founded the Labora Collective because the women's health crisis in this country is not what most people think it is, and I've spent the better part of a decade figuring out what it actually is.</p>
+  <p>There are so many things to talk about right now. It can feel like a mess of spaghetti in your head. Bad thing after bad thing after bad thing. A lot of what I spend my time doing — as a thinker — is figuring out how to bucket things. Because I'm a physician, yes, but I'm also a trained engineer. And engineers do one thing relentlessly: <strong>we simplify</strong>.</p>
+  <p>So this is the way we are simplifying it. A mental model. It walks you through the moral philosophy, the history, what's happening politically, what's happening legally, and how it's going to affect your health — step by step, between now and the midterms. This site is the seed. The full body of work — and we have years of it — sits underneath.</p>
+
+  <div class="thesis-block">
+    <span class="label">The Central Frame</span>
+    <div class="quote">"You look around, you see destruction, and the question is not 'what do we do.' Not yet. The question is: what is knowable. What can we see clearly. What can we say plainly. What can we prove."</div>
+    <div class="attribution">— Dr. Yamicia Connor · OB/GYN · Founder, The Labora Collective</div>
+  </div>
+</section>
+
+<!-- HOW WE KNOW -->
+<section class="body-section" id="how-we-know">
+  <span class="section-overline">How We Know</span>
+  <h2 class="section-h2">Not from one source. <em>From every angle we could find.</em></h2>
+  <p>Before we tell you what we know, let us tell you how we know it. Because you're going to be told this is opinion. You're going to be told it's partisan. You're going to be told, "how do you know?"</p>
+  <p>We know because we did not look once. We looked <strong>thirty-three times</strong>. Our flagship report — <em>The State of Women's and Children's Health</em> — analyzes 33 dimensions of women's and children's well-being across all 50 states, cross-referenced against federal policy, judicial rulings, clinical outcomes, and historical patterns going back to Comstock, 1873. We built causal maps. We built dismantlement timelines. We walked through the case law. We watched maternity wards close in real time. We read the actual text of the legislation.</p>
+  <p>We have turned this over and over again, trying to unexplain it. Trying to find a more innocent reading. A benign cause. A different shape. Each time, the same shape emerges. <strong>That is how we know.</strong></p>
+</section>
+
+<!-- FIVE QUESTIONS -->
+<section class="body-section" id="five-questions">
+  <span class="section-overline">The Structure</span>
+  <h2 class="section-h2">Five questions. <em>One backbone.</em></h2>
+  <ol class="five-questions">
+    <li>What do they want?</li>
+    <li>Why do they want it?</li>
+    <li>How are they doing it?</li>
+    <li>Why are they wrong?</li>
+    <li>How do we fight back?</li>
+  </ol>
+</section>
+
+<!-- Q1 -->
+<section class="body-section" id="q1">
+  <span class="section-overline">Question One</span>
+  <h2 class="section-h2">What do they want?</h2>
+  <p>Three things. They've never been quiet about it among themselves — only in mixed company.</p>
+  <h3 class="section-h3">One: women back in the home.</h3>
+  <p>Not metaphorically. Literally. A society where a woman cannot lease an apartment without her father or husband's signature — which was the law in most U.S. jurisdictions until the Equal Credit Opportunity Act of 1974. Female economic independence not as a right, but as an accident.</p>
+  <h3 class="section-h3">Two: Black Americans returned to a permanent underclass.</h3>
+  <p>Voting rights gutted — <em>Shelby County v. Holder</em>, 2013. Affirmative action ended — <em>SFFA v. Harvard</em>, 2023. And in 2025–2026, the word <em>Black</em> itself stripped from federal health language across HHS, CDC, and HRSA.</p>
+  <h3 class="section-h3">Three: white men, and men in general, restored to dominant and unchallenged power.</h3>
+  <p>Not earned — restored. The operative word is <em>unchallenged</em>. They're still winning by every economic measure. The grievance isn't losing. The grievance is being challenged. That's the unbearable thing. The work is to make sure it can't happen again.</p>
+</section>
+
+<!-- Q2 -->
+<section class="body-section" id="q2">
+  <span class="section-overline">Question Two</span>
+  <h2 class="section-h2">Why do they want it?</h2>
+  <p>Because they believe it. This is the part most polite analysis refuses to say plainly: <strong>they believe these things.</strong> Not as code. As theology and as worldview.</p>
+  <p>They believe women are responsible for the destruction of society. Pastor Dale Partridge published a book in March 2026 called <em>19 Reasons to Repeal the 19th Amendment</em>. Pastor Joel Webbon preaches that wives should vote how their husbands tell them to. Partridge writes that women have "suicidal empathy" and need male governance for their own good. The Secretary of Defense, Pete Hegseth, reshares these sermons approvingly. This is no longer the fringe. This is the operating belief of the men writing the laws.</p>
+  <p>They believe in the inferiority of Black people. Not as a historical artifact — as a present operating principle. Every dismantlement of federal civil rights infrastructure is the policy expression of a belief.</p>
+  <p>They believe the antisemitic tropes. That Jewish money controls the world. <em>Globalist. Soros. The elites.</em> They believe it.</p>
+
+  <div class="thesis-block">
+    <span class="label">The Tell</span>
+    <div class="quote">"There is still a social cost to being a racist. There is still a social cost to being an antisemite. There is no social cost left to misogyny. That is why the misogyny is the loudest — it's the only one of the three big bigotries that has been promoted, in 2026, from prejudice to operating plan."</div>
+  </div>
+</section>
+
+<!-- Q3 -->
+<section class="body-section" id="q3">
+  <span class="section-overline">Question Three</span>
+  <h2 class="section-h2">How are they doing it?</h2>
+  <p>Two arms working in concert. The political arm builds. The legal arm cements.</p>
+  <h3 class="section-h3">The political arm has been running for sixty years.</h3>
+  <p>Powell Memo, 1971. Heritage Foundation, 1973. Moral Majority, 1979. Federalist Society, 1982. They wrote the model legislation. They funded the candidates. They captured the state legislatures. Texas HB 7. Louisiana warrants for New York doctors. One statute at a time. That track has its own name: <em>Manufactured Healthcare Crisis</em> — already published, linked below.</p>
+  <h3 class="section-h3">The legal arm cements what the political arm builds.</h3>
+  <p>Forty years of judicial pipeline produced the most anti-democratic Supreme Court since Reconstruction. <em>Shelby</em>, 2013. <em>Hobby Lobby</em>, 2014. <em>Dobbs</em>, 2022. <em>SFFA</em>, 2023. <em>Loper Bright</em>, 2024. <em>Purl v. HHS</em> vacating HIPAA reproductive privacy. That track launches next: <em>Bring The Bolt Cutters</em> — twenty-four receipts, one every Friday, until the midterms.</p>
+</section>
+
+<!-- Q4 -->
+<section class="body-section" id="q4">
+  <span class="section-overline">Question Four</span>
+  <h2 class="section-h2">Why are they wrong?</h2>
+  <p>This is the question I care about most as a Catholic, a physician, and a thinker. And I want to be honest about it — there are parts of their argument we actually agree with. Just not the conclusion.</p>
+  <p>Because the original pro-life position was not what the religious right turned it into. It was a serious moral philosophy. Let me start at the beginning.</p>
+
+  <h3 class="section-h3">Natural law: the foundation.</h3>
+  <p>Thomas Aquinas, thirteenth century, building on Aristotle. The claim: there is an objective moral order woven into reality itself, and human reason can know it. Human dignity is not a feeling. It is a fact about what we are.</p>
+
+  <h3 class="section-h3">The seamless garment.</h3>
+  <p>From that foundation: if human dignity is real, you cannot defend it selectively. Every threat to human life is forbidden by the same logic. Abortion. Capital punishment. War. Poverty. Racism. Segregation. You can't pick. Eileen Egan coined the phrase in 1971, drawing from the Gospel of John — the robe of Christ the Roman soldiers refused to tear. Cardinal Bernardin formalized it at Fordham, December 1983. Feminists for Life formed in 1972 on this premise: support the woman, and she will choose the child. The original Catholic position was progressive on economics, anti-coercion, anti-death-penalty, anti-war, pro-mother. It was bipartisan. It was a fringe of radical Catholics. And it is everything the modern political "pro-life" movement is not.</p>
+
+  <h3 class="section-h3">The same logic produced Dr. King.</h3>
+  <p>The same natural law tradition produced Martin Luther King Jr.'s argument against segregation. <em>Letter from Birmingham Jail</em>, April 16, 1963. King wrote:</p>
+  <p class="pullquote">An unjust law is a human law that is not rooted in eternal law and natural law. Any law that uplifts human personality is just. Any law that degrades human personality is unjust. All segregation statutes are unjust because segregation distorts the soul and damages the personality.</p>
+  <p>That is King. Citing Aquinas. By name. In jail.</p>
+  <p>Black Baptist preacher in 1963. Italian-American Catholic Cardinal in 1983. Catholic pacifist activist in 1971. Same foundation. Same logic. <strong>Same garment.</strong></p>
+
+  <h3 class="section-h3">What actually happened in 1979.</h3>
+  <p>Paul Weyrich and Jerry Falwell sat down to build a political movement. They needed a respectable cover story. What they were actually defending was the tax-exempt status of Bob Jones University — revoked by Nixon's IRS in 1976 because Bob Jones banned interracial dating, a ban they didn't lift until the year 2000. But "we want our segregated schools back" was not, by 1979, a slogan you could run on. So they reached for the Catholic anti-abortion cause that was already lying around.</p>
+  <p>Here's the receipt — abortion used to be bipartisan. The Southern Baptist Convention passed pro-choice resolutions in 1971, 1974, and 1976. Baptist Press called <em>Roe</em> a victory for "religious liberty, human equality and justice" nine days after the decision. Jerry Falwell did not preach a single sermon against abortion until February 1978 — five years after <em>Roe</em>. The historian Randall Balmer documented this. Paul Weyrich admitted it on record at a 1990 religious-right conference. Grover Norquist confirms it.</p>
+
+  <h3 class="section-h3">They took the conclusion. They could not take the philosophy.</h3>
+  <p>Because the philosophy — natural law applied consistently — would have forbidden what they were defending. Segregation was unjust under natural law. King had said so. Aquinas had said so. If they had adopted the actual Catholic position, they would have been arguing against themselves. So they kept the slogan and threw the reasoning away. They kept "abortion is wrong." They dropped "capital punishment is wrong, war is wrong, segregation is wrong, poverty is wrong, mothers must be supported." They built a pro-life movement that is anti-mother. They kept the punishment. They dropped the safety net.</p>
+
+  <div class="thesis-block">
+    <span class="label">The Plain Reading</span>
+    <div class="quote">"That is not pro-life. That is pro-control. And as a Catholic, I'll say it plainly: my tradition was hijacked."</div>
+    <div class="attribution">— Dr. Yamicia Connor</div>
+  </div>
+
+  <aside class="inset-card">
+    <span class="label">What Was Life Before Roe</span>
+    <h3>The sepsis wards.</h3>
+    <p>You cannot understand <em>Roe</em> without understanding what came before it. I have an attending — one of the senior physicians who trained me. She started her career before <em>Roe</em>. She tells me about sepsis rounds. These were literal rounds, on wards full of women dying from botched illegal abortions and complicated miscarriages they couldn't get treated. She holds the memory of standing at bedsides holding women's hands while they died. Agonizing deaths. From medically treatable conditions, in a country where treating them was a crime.</p>
+    <p>That is the medical reality <em>Roe</em> was written into. <em>Roe</em> was not abstract. It was a response to a body count. Every restriction now in force — every six-week ban, every miscarriage prosecution, every closed maternity ward — is rebuilding those sepsis wards. That's what the medical track — <em>Crisis to Care</em> — is about.</p>
+  </aside>
+</section>
+
+<!-- Q5 -->
+<section class="body-section" id="q5">
+  <span class="section-overline">Question Five</span>
+  <h2 class="section-h2">How do we fight back?</h2>
+  <p>We fight back the same way they built it: patiently, structurally, in public, with receipts. <strong>The Roberts Court tied us to the tracks. They forgot we brought bolt cutters.</strong></p>
+  <p>Three tracks. One umbrella. One destination — the midterms.</p>
+
+  <div class="thesis-block">
+    <span class="label">The Closing Argument</span>
+    <div class="quote">"The men who built this counted on three things: that we wouldn't notice, that we wouldn't connect the dots, and that we wouldn't be angry enough to organize across the lines they drew between us. They were wrong about the noticing. They were wrong about the dots. They are about to find out about the anger."</div>
+  </div>
+
+  <p>Register. Donate. Run for something. Call your sister. Call your mother. Call the woman who taught your daughter to read. Talk to the women in your church and the women who don't go.</p>
+  <p><strong>The train is coming. We are not the ones getting hit.</strong></p>
+</section>
+
+</main>
+
+<!-- TRACKS -->
+<section class="tracks-section" id="tracks">
+  <span class="section-overline">The Three Tracks</span>
+  <h2 class="tracks-h2">One umbrella. <em>One destination.</em></h2>
+  <p class="tracks-deck">Each track is a complete body of work. Together they map the whole — political, legal, medical. Built to be shared. Built to be acted on.</p>
+
+  <div class="track-grid">
+    <a class="track-card live" href="https://laboracollective.com/intelligence/labora-rounds/manufactured-healthcare-crisis/">
+      <span class="label">Political Track · Live</span>
+      <h3>Manufactured Healthcare Crisis</h3>
+      <p>Sixty years of legislation laid bare. Powell to Heritage to Federalist to Texas HB 7 — the political pipeline that built the crisis, one statute at a time.</p>
+      <div class="meta">Live now <span class="arrow">→</span></div>
+    </a>
+
+    <div class="track-card soon">
+      <span class="label">Legal Track · Launching</span>
+      <h3>Bring The Bolt Cutters</h3>
+      <p>Twenty-four receipts. One every Friday, until the midterms. Each names a court ruling, the body it lands on, and the data underneath. The Roberts Court catalog.</p>
+      <div class="meta">Launching May 29</div>
+    </div>
+
+    <div class="track-card soon">
+      <span class="label">Medical Track · Launching</span>
+      <h3>Crisis to Care</h3>
+      <p>What it means for your body, your daughter's body, your mother's body. The clinical reality of the policy choices — and the practical playbook for navigating them.</p>
+      <div class="meta">Launching soon</div>
+    </div>
+  </div>
+</section>
+
+<!-- FINAL CTA -->
+<section class="final-cta">
+  <div class="final-cta-inner">
+    <h2>The train is coming. <em>We are not the ones getting hit.</em></h2>
+    <p class="final-cta-deck">One piece of work per week between now and the midterms. The umbrella, the receipts, the medicine. Enough to walk through it with anyone who asks.</p>
+    <div class="k-capture">
+      <span class="k-capture-label">Follow the work</span>
+      <p>Drop your email. No spam. Unsubscribe anytime.</p>
+      <form action="https://api.beehiiv.com/v2/publications/laboracollective/subscriptions" method="post">
+        <input type="email" name="email" placeholder="you@somewhere.com" required>
+        <button type="submit">Subscribe</button>
+      </form>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer class="k-footer">
+  <p><em>What Is Knowable</em> is part of the Labora Collective. The full body of work — clinical reports, the Clinical Partners Network, weekly intelligence briefs — lives at <a href="https://laboracollective.com">laboracollective.com</a>.</p>
+</footer>
+
+</body>
+</html>
