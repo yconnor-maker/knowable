@@ -783,19 +783,19 @@ em { font-style: italic; }
   <div class="inner wide fade-in">
     <div class="stats-grid">
       <div class="stat-cell">
-        <div class="stat-num">33</div>
+        <div class="stat-num" data-count="33">33</div>
         <div class="stat-label">Dimensions of women's &amp; children's well-being analyzed</div>
       </div>
       <div class="stat-cell">
-        <div class="stat-num">50</div>
+        <div class="stat-num" data-count="50">50</div>
         <div class="stat-label">States cross-referenced against federal policy</div>
       </div>
       <div class="stat-cell">
-        <div class="stat-num">60</div>
+        <div class="stat-num" data-count="60">60</div>
         <div class="stat-label">Years of political pipeline traced — Powell to now</div>
       </div>
       <div class="stat-cell">
-        <div class="stat-num">1873</div>
+        <div class="stat-num" data-count="1873">1873</div>
         <div class="stat-label">Historical baseline — Comstock Act forward</div>
       </div>
     </div>
@@ -1052,6 +1052,33 @@ em { font-style: italic; }
     entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add('visible'); observer.unobserve(e.target); } });
   }, { threshold: 0.12, rootMargin: '0px 0px -40px 0px' });
   document.querySelectorAll('.fade-in').forEach(el => observer.observe(el));
+
+  // Animated counters — count up from 0 to data-count value on scroll into view
+  function animateCounter(el) {
+    const target = parseInt(el.dataset.count, 10);
+    const suffix = el.dataset.suffix || '';
+    const duration = 1800;
+    const startTime = performance.now();
+    function tick(now) {
+      const progress = Math.min((now - startTime) / duration, 1);
+      const eased = 1 - Math.pow(1 - progress, 3); // ease-out cubic
+      el.textContent = Math.round(eased * target).toLocaleString() + suffix;
+      if (progress < 1) requestAnimationFrame(tick);
+    }
+    requestAnimationFrame(tick);
+  }
+  const counterObserver = new IntersectionObserver((entries) => {
+    entries.forEach(e => {
+      if (e.isIntersecting) {
+        animateCounter(e.target);
+        counterObserver.unobserve(e.target);
+      }
+    });
+  }, { threshold: 0.2 });
+  document.querySelectorAll('[data-count]').forEach(el => {
+    el.textContent = '0';
+    counterObserver.observe(el);
+  });
 </script>
 </body>
 </html>
