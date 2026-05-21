@@ -75,6 +75,24 @@ a:hover { color: var(--espresso); }
 .brand-bar a { color: rgba(251,245,255,0.7); }
 .brand-bar a:hover { color: var(--gold-light); }
 .brand-bar .brand-mark { color: var(--gold); font-weight: 700; }
+.brand-nav { display: flex; gap: 1.75rem; align-items: center; }
+.brand-nav a { letter-spacing: 0.12em; text-transform: uppercase; font-size: 0.68rem; color: rgba(251,245,255,0.65); }
+.brand-nav a:hover { color: var(--gold-light); }
+.brand-nav .nav-cta { color: var(--gold); font-weight: 700; }
+
+/* ── Breadcrumb ── */
+.k-breadcrumb {
+  font-family: var(--font-ui);
+  font-size: 0.62rem;
+  font-weight: 500;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: rgba(251,245,255,0.4);
+  margin-bottom: 2rem;
+}
+.k-breadcrumb a { color: rgba(251,245,255,0.5); text-decoration: none; }
+.k-breadcrumb a:hover { color: var(--gold); }
+.k-sep { margin: 0 0.6rem; opacity: 0.4; }
 
 /* ── Hero ── */
 .k-hero {
@@ -208,44 +226,6 @@ a:hover { color: var(--espresso); }
   line-height: 1.5;
 }
 
-/* ── Anchor nav ── */
-.anchor-nav {
-  background: var(--white);
-  border-bottom: 1px solid rgba(54,37,17,0.08);
-  padding: 1rem 1.5rem;
-  position: sticky;
-  top: 0;
-  z-index: 50;
-}
-.anchor-nav-inner {
-  max-width: 1100px;
-  margin: 0 auto;
-  display: flex;
-  gap: 1.5rem;
-  flex-wrap: wrap;
-  justify-content: center;
-  align-items: center;
-}
-.anchor-nav-inner a {
-  font-family: var(--font-ui);
-  font-size: 0.7rem;
-  font-weight: 600;
-  letter-spacing: 0.14em;
-  text-transform: uppercase;
-  color: var(--muted);
-  padding: 0.25rem 0;
-  border-bottom: 2px solid transparent;
-  transition: color .15s, border-color .15s;
-}
-.anchor-nav-inner a:hover {
-  color: var(--gold);
-  border-bottom-color: var(--gold);
-}
-.anchor-num {
-  color: var(--gold);
-  font-weight: 700;
-  margin-right: 0.3rem;
-}
 
 /* ── Body sections ── */
 .body-section {
@@ -361,10 +341,10 @@ a:hover { color: var(--espresso); }
   justify-content: center;
 }
 
-/* ── Sepsis inset (rose-tinted callout) ── */
+/* ── Sepsis inset (copper callout) ── */
 .inset-card {
-  background: var(--rose-light);
-  border-left: 4px solid var(--rose);
+  background: var(--blush-light);
+  border-left: 4px solid var(--copper);
   padding: 2.25rem 2.5rem;
   margin: 3rem 0;
   border-radius: 0 6px 6px 0;
@@ -375,7 +355,7 @@ a:hover { color: var(--espresso); }
   font-weight: 700;
   letter-spacing: 0.25em;
   text-transform: uppercase;
-  color: var(--rose);
+  color: var(--copper-text);
   margin-bottom: 0.85rem;
   display: block;
 }
@@ -434,6 +414,19 @@ a:hover { color: var(--espresso); }
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   gap: 1.5rem;
+}
+.track-card .desc {
+  font-family: var(--font-ui);
+  font-size: 0.78rem;
+  font-weight: 500;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--copper-text);
+  background: var(--blush-light);
+  padding: 0.2rem 0.5rem;
+  border-radius: 3px;
+  display: inline-block;
+  margin-bottom: 1rem;
 }
 .track-card {
   background: var(--white);
@@ -512,6 +505,26 @@ a:hover { color: var(--espresso); }
   margin-right: auto;
 }
 .final-cta .k-capture { margin: 0 auto; text-align: left; }
+.final-cta-btn {
+  display: inline-block;
+  background: var(--gold);
+  color: var(--espresso);
+  font-family: var(--font-ui);
+  font-size: 0.72rem;
+  font-weight: 700;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  padding: 0.9rem 2rem;
+  border-radius: 4px;
+  text-decoration: none;
+  transition: filter 0.2s, transform 0.1s;
+  margin-bottom: 2.5rem;
+  display: block;
+  width: fit-content;
+  margin-left: auto;
+  margin-right: auto;
+}
+.final-cta-btn:hover { filter: brightness(1.1); transform: translateY(-1px); color: var(--espresso); }
 
 /* ── Footer ── */
 .k-footer {
@@ -533,11 +546,11 @@ a:hover { color: var(--espresso); }
 /* ── Responsive ── */
 @media (max-width: 760px) {
   .brand-bar-inner { font-size: 0.62rem; }
+  .brand-nav { gap: 1rem; }
+  .brand-nav a { font-size: 0.6rem; }
   .k-hero { padding: 3rem 1.5rem 2.5rem; }
   .top-stats-inner { grid-template-columns: repeat(2, 1fr); gap: 1.5rem; }
   .ts-num { font-size: 2.1rem; }
-  .anchor-nav-inner { gap: 1rem; }
-  .anchor-nav-inner a { font-size: 0.62rem; letter-spacing: 0.08em; }
   .body-section { padding: 2.5rem 1.5rem 1rem; }
   .body-section p { font-size: 1.04rem; }
   .thesis-block { padding: 1.75rem; }
@@ -556,14 +569,19 @@ a:hover { color: var(--espresso); }
 <!-- BRAND BAR -->
 <div class="brand-bar">
   <div class="brand-bar-inner">
-    <span><span class="brand-mark">Labora</span> Collective</span>
-    <a href="https://laboracollective.com">laboracollective.com →</a>
+    <a href="https://laboracollective.com" style="text-decoration:none;"><span class="brand-mark">Labora</span> Collective</a>
+    <nav class="brand-nav">
+      <a href="https://laboracollective.com/intelligence/" class="nav-link">Intelligence</a>
+      <a href="https://laboracollective.com/products/" class="nav-link">Products</a>
+      <a href="https://laboracollective.substack.com" class="nav-cta" target="_blank" rel="noopener">Subscribe →</a>
+    </nav>
   </div>
 </div>
 
 <!-- HERO -->
 <section class="k-hero">
   <div class="k-hero-inner">
+    <div class="k-breadcrumb"><a href="https://laboracollective.com/intelligence/">Intelligence</a> <span class="k-sep">/</span> <a href="https://laboracollective.com/intelligence/">Labora Rounds</a> <span class="k-sep">/</span> What Is Knowable</div>
     <span class="k-overline">A Labora Collective Microsite · Live May 21, 2026</span>
     <h1>What Is <em>Knowable</em></h1>
     <p class="k-hero-deck">A mental model for what is being done to American women — and what we are going to do about it. Five questions. Three tracks. One destination — the midterms.</p>
@@ -601,16 +619,6 @@ a:hover { color: var(--espresso); }
   </div>
 </section>
 
-<!-- ANCHOR NAV -->
-<nav class="anchor-nav" aria-label="Section nav">
-  <div class="anchor-nav-inner">
-    <a href="#q1"><span class="anchor-num">1</span>What do they want?</a>
-    <a href="#q2"><span class="anchor-num">2</span>Why do they want it?</a>
-    <a href="#q3"><span class="anchor-num">3</span>How are they doing it?</a>
-    <a href="#q4"><span class="anchor-num">4</span>Why are they wrong?</a>
-    <a href="#q5"><span class="anchor-num">5</span>How do we fight back?</a>
-  </div>
-</nav>
 
 <main>
 
@@ -783,6 +791,7 @@ a:hover { color: var(--espresso); }
   <div class="final-cta-inner">
     <h2>The train is coming. <em>We are not the ones getting hit.</em></h2>
     <p class="final-cta-deck">One piece of work per week between now and the midterms. The umbrella, the receipts, the medicine. Enough to walk through it with anyone who asks.</p>
+    <a href="https://laboracollective.com/intelligence/" class="final-cta-btn">All Labora Rounds Intelligence →</a>
     <div class="k-capture">
       <span class="k-capture-label">Follow the work</span>
       <p>Drop your email. No spam. Unsubscribe anytime.</p>
